@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.companieshouse</groupId>
+    <artifactId>kafka-models</artifactId>
+    <version>unversioned</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <avro.version>1.8.1</avro.version>
+        <avro-maven-plugin.version>1.8.1</avro-maven-plugin.version>
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
+        <artifactoryBaseUrl>http://ch-jenkins-2k8.internal.ch:8081/artifactory</artifactoryBaseUrl>
+        <artifactoryResolveRepo>libs-release</artifactoryResolveRepo>
+        <artifactorySnapshotRepo>libs-snapshot-local</artifactorySnapshotRepo>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>kafka-models</finalName>
+
+        <plugins>
+            <!-- Replace backslashes in the schemas before generating the code -->
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <basedir>${basedir}</basedir>
+                    <includes>
+                        <include>chs-kafka-schemas/schemas/*.avsc</include>
+                    </includes>
+                    <replacements>
+                        <replacement>
+                            <token>\"</token>
+                            <value>"</value>
+                        </replacement>
+                    </replacements>
+                    <regex>false</regex>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>${avro-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <stringType>String</stringType>
+                            <sourceDirectory>${project.basedir}/chs-kafka-schemas/schemas</sourceDirectory>
+                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>ch-artifactory</id>
+            <url>${artifactoryBaseUrl}/${artifactoryResolveRepo}</url>
+        </repository>
+        <repository>
+            <id>ch-artifactory-snapshots</id>
+            <url>${artifactoryBaseUrl}/${artifactorySnapshotRepo}</url>
+        </repository>
+    </repositories>
+
+</project>
