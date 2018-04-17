@@ -52,8 +52,8 @@
                     </includes>
                     <replacements>
                         <replacement>
-                            <token>\</token>
-                            <value></value>
+                            <token>\"</token>
+                            <value>"</value>
                         </replacement>
                     </replacements>
                     <regex>false</regex>
