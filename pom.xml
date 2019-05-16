@@ -2,7 +2,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.companieshouse</groupId>
+    <groupId>uk.gov.companieshouse</groupId>
     <artifactId>kafka-models</artifactId>
     <version>unversioned</version>
     <packaging>jar</packaging>
@@ -15,8 +15,7 @@
         <avro-maven-plugin.version>1.8.1</avro-maven-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
-        <artifactoryBaseUrl>http://ch-jenkins-2k8.internal.ch:8081/artifactory</artifactoryBaseUrl>
-        <artifactoryResolveRepo>libs-release</artifactoryResolveRepo>
+        <artifactoryResolveRepo>libs-release-local</artifactoryResolveRepo>
         <artifactorySnapshotRepo>libs-snapshot-local</artifactorySnapshotRepo>
     </properties>
     
@@ -29,8 +28,6 @@
     </dependencies>
 
     <build>
-        <finalName>kafka-models</finalName>
-
         <plugins>
             <!-- Replace backslashes in the schemas before generating the code -->
             <plugin>
@@ -91,12 +88,12 @@
 
     <repositories>
         <repository>
-            <id>ch-artifactory</id>
-            <url>${artifactoryBaseUrl}/${artifactoryResolveRepo}</url>
+            <id>ch-artifactory-release</id>
+            <url>${MAVEN_REPOSITORY_URL}/${artifactoryResolveRepo}</url>
         </repository>
         <repository>
             <id>ch-artifactory-snapshots</id>
-            <url>${artifactoryBaseUrl}/${artifactorySnapshotRepo}</url>
+            <url>${MAVEN_REPOSITORY_URL}/${artifactorySnapshotRepo}</url>
         </repository>
     </repositories>
 
