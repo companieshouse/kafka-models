@@ -2,22 +2,22 @@ kafka-models
 =====================
 Library containing models for use with Avro which will be auto-generated from Kafka schemas.
 
-### Requirements
------------------
+Requirements
+------------
 In order to run the service locally you will need the following:
 
 - [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-### Building the models 
-----------------------
+Building the models 
+------------
 The models can be built using Maven
 
 ```
 mvn clean install
 ```
 
-### Using the library
-----------------------
+Using the library
+------------
 The library can be imported as a Maven dependency
 
 ```
@@ -28,8 +28,8 @@ The library can be imported as a Maven dependency
 </dependency>
 ```
 
-### Updating a model
-----------------------
+Updating a model
+------------
 
 1. Update the schema in [chs-kafka-schemas](https://github.com/companieshouse/chs-kafka-schemas).
 2. Update the version of the chs-kafka-schemas submodule
@@ -38,8 +38,8 @@ The library can be imported as a Maven dependency
    ```
 3. The models will be auto-generated when the code is built.
 
-### Using the model for serialising with Avro
-----------------------
+Using the model for serialising with Avro
+------------
 ```
 public byte[] serialize([Avro model] data) throws IOException {
     DatumWriter<[Avro model]> datumWriter = new SpecificDatumWriter<>();
@@ -58,8 +58,8 @@ public byte[] serialize([Avro model] data) throws IOException {
 }
 ```
 
-### Using the model for deserialising with Avro
-----------------------
+Using the model for deserialising with Avro
+------------
 
 When the models are auto-generated the schema is embedded within the model.
 
