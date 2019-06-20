@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>uk.gov.companieshouse</groupId>
     <artifactId>kafka-models</artifactId>
-    <version>1.0.0</version>
+    <version>unversioned</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -69,9 +69,9 @@
                         <configuration>
                             <stringType>String</stringType>
                             <sourceDirectory>${project.basedir}/chs-kafka-schemas/schemas</sourceDirectory>
-							<includes>
-								<include>compliance-action-completed.avsc</include>
-							</includes>
+                            <includes>
+                                <include>compliance-action-completed.avsc</include>
+                            </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
                     </execution>
