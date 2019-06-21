@@ -1,0 +1,3 @@
+[submodule "chs-kafka-schemas"]
+	path = chs-kafka-schemas
+	url = https://github.com/companieshouse/chs-kafka-schemas
