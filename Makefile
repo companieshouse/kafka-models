@@ -19,7 +19,9 @@ test-unit: clean
 
 .PHONY: package
 package:
-	version="unversioned"
+ifndef version
+	$(error No version given. Aborting)
+endif
 	$(info Packaging version: $(version))
 	mvn versions:set -DnewVersion=$(version) -DgenerateBackupPoms=false
 	mvn package -DskipTests=true
