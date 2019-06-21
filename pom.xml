@@ -17,6 +17,12 @@
         <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
         <artifactoryResolveRepo>libs-release-local</artifactoryResolveRepo>
         <artifactorySnapshotRepo>libs-snapshot-local</artifactorySnapshotRepo>
+        
+        <!-- Sonar -->
+        <sonar-maven-plugin.version>3.4.0.905</sonar-maven-plugin.version>
+        <sonar.host.url>${CODE_ANALYSIS_HOST_URL}</sonar.host.url>
+        <sonar.login>${CODE_ANALYSIS_LOGIN}</sonar.login>
+        <sonar.password>${CODE_ANALYSIS_PASSWORD}</sonar.password>
     </properties>
     
     <dependencies>
