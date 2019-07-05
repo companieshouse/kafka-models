@@ -32,7 +32,3 @@ dist: clean build package
 .PHONY: publish
 publish:
 	mvn jar:jar deploy:deploy
-
-.PHONY: sonar
-sonar:
-	mvn sonar:sonar
