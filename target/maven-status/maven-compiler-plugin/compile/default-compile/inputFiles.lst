@@ -1,0 +1,14 @@
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/document/generation/request/RenderSubmittedDataDocument.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/processed/FilingProcessed.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/processed/PresenterRecord.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/document/generation/status/DocumentGenerationFailed.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/document/generation/status/DocumentGenerationStarted.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/received/Transaction.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/received/SubmissionRecord.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/processed/ResponseRecord.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/prosecutioncaseconsumer/avro/models/ComplianceActionCompleted.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/received/FilingReceived.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/document/generation/status/DocumentGenerationCompleted.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/received/PresenterRecord.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/processed/RejectRecord.java
+/Users/clewis1/dev/SingleService/kafka-models/src/main/java/uk/gov/companieshouse/filing/processed/SubmissionRecord.java
