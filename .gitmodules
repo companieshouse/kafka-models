@@ -1,4 +1,4 @@
 [submodule "chs-kafka-schemas"]
 	path = chs-kafka-schemas
 	url = git@github.com:companieshouse/chs-kafka-schemas
-	branch = pci-705-produce-to-order-received
+	branch = master
