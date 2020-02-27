@@ -76,6 +76,7 @@
                                 <include>document-generation-failed.avsc</include>
                                 <include>filing-processed.avsc</include>
                                 <include>filing-received.avsc</include>
+                                <include>order-received.avsc</include>
                                 <include>render-submitted-data-document.avsc</include>
                                 <include>secure-application-completed.avsc</include>
                             </includes>
