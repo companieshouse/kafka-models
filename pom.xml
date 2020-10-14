@@ -75,6 +75,7 @@
                                 <include>document-generation-started.avsc</include>
                                 <include>document-generation-completed.avsc</include>
                                 <include>document-generation-failed.avsc</include>
+                                <include>email-send.avsc</include>
                                 <include>filing-processed.avsc</include>
                                 <include>filing-received.avsc</include>
                                 <include>order-received.avsc</include>
