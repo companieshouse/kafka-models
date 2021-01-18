@@ -1,19 +1,23 @@
 kafka-models
 =====================
+
 Library containing models for use with Avro which will be auto-generated from Kafka schemas.
 
 Cloning the repository
 ------------
+
 Please use `git clone git@github.com:companieshouse/kafka-models.git --recursive` to include submodules.
 
 Requirements
 ------------
+
 In order to run the service locally you will need the following:
 
 - [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 Building the models 
 ------------
+
 The models can be built using Maven
 
 ```
@@ -22,6 +26,7 @@ mvn clean install
 
 Using the library
 ------------
+
 The library can be imported as a Maven dependency
 
 ```
@@ -40,10 +45,15 @@ Updating a model
    ```
    git submodule update --remote
    ```
-3. The models will be auto-generated when the code is built.
+3. Add your new `avsc` file to the include list in pom.xml for avro-maven-plugin under source directory:
+   ```
+   <sourceDirectory>${project.basedir}/chs-kafka-schemas/schemas</sourceDirectory>
+   ```
+4. The models will be auto-generated when the code is built.
 
 Using the model for serialising with Avro
 ------------
+
 ```
 public byte[] serialize([Avro model] data) throws IOException {
     DatumWriter<[Avro model]> datumWriter = new SpecificDatumWriter<>();
