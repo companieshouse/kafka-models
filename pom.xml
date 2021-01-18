@@ -82,6 +82,7 @@
                                 <include>order-received.avsc</include>
                                 <include>render-submitted-data-document.avsc</include>
                                 <include>secure-application-completed.avsc</include>
+                                <include>ocr-request.avsc</include>
                             </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
