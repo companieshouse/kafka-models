@@ -2,6 +2,10 @@ kafka-models
 =====================
 Library containing models for use with Avro which will be auto-generated from Kafka schemas.
 
+Cloning the repository
+------------
+Please use `git clone git@github.com:companieshouse/kafka-models.git --recursive` to include submodules.
+
 Requirements
 ------------
 In order to run the service locally you will need the following:
