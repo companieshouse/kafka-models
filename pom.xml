@@ -72,6 +72,7 @@
                             <includes>
                                 <include>chd-item-ordered.avsc</include>
                                 <include>chips-rest-interfaces-send.avsc</include>
+                                <include>chs-delta.avsc</include>
                                 <include>compliance-action-completed.avsc</include>
                                 <include>document-generation-started.avsc</include>
                                 <include>document-generation-completed.avsc</include>
