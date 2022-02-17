@@ -84,6 +84,7 @@
                                 <include>order-received-notification-retry.avsc</include>
                                 <include>render-submitted-data-document.avsc</include>
                                 <include>secure-application-completed.avsc</include>
+                                <include>resource-changed-data.avsc</include>
                             </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
