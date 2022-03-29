@@ -1,0 +1,8 @@
+# Maven
+target/
+
+# IntelliJ
+.idea/
+
+# Ignore generated code in src direcotory
+src/
