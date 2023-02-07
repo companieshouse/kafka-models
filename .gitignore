@@ -3,6 +3,8 @@ target/
 
 # IntelliJ
 .idea/
+.vscode/
 
 # Ignore generated code in src direcotory
-src/
+src/main/java/email/
+src/main/java/uk/
