@@ -1,4 +1,4 @@
-package avro.utils;
+package consumer.utils;
 
 import org.apache.avro.Schema;
 import org.apache.avro.specific.SpecificRecordBase;

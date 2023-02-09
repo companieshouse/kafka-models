@@ -1,11 +1,11 @@
-package avro.serialization;
+package consumer.serialization;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import avro.utils.TestRecord;
+import consumer.utils.TestRecord;
 
 public class AvroSerializerTest {
 

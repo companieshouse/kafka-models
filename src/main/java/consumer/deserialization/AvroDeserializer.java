@@ -1,4 +1,4 @@
-package avro.deserialization;
+package consumer.deserialization;
 
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.Decoder;
@@ -6,7 +6,7 @@ import org.apache.avro.io.DecoderFactory;
 import org.apache.avro.reflect.ReflectDatumReader;
 import org.apache.kafka.common.serialization.Deserializer;
 
-import avro.exception.NonRetryableErrorException;
+import consumer.exception.NonRetryableErrorException;
 
 public class AvroDeserializer<T> implements Deserializer<T> {
     

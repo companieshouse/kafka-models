@@ -1,4 +1,4 @@
-package avro.serialization;
+package consumer.serialization;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificRecordBase;
 import org.apache.kafka.common.serialization.Serializer;
 
-import avro.exception.NonRetryableErrorException;
+import consumer.exception.NonRetryableErrorException;
 
 public class AvroSerializer implements Serializer<Object> {
 

@@ -1,4 +1,4 @@
-package avro.exception;
+package consumer.exception;
 
 public class NonRetryableErrorException extends RuntimeException {
 
