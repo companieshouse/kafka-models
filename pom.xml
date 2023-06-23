@@ -144,6 +144,7 @@
                                 <include>email-send.avsc</include>
                                 <include>filing-processed.avsc</include>
                                 <include>filing-received.avsc</include>
+                                <include>item-ordered-certified-copy.avsc</include>
                                 <include>order-received.avsc</include>
                                 <include>order-received-notification-retry.avsc</include>
                                 <include>render-submitted-data-document.avsc</include>
