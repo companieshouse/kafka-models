@@ -1,5 +1,8 @@
 package consumer.matcher;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.http.Request;
 import com.github.tomakehurst.wiremock.http.RequestMethod;
 import com.github.tomakehurst.wiremock.matching.MatchResult;
@@ -89,7 +92,16 @@ public class RequestMatcher implements ValueMatcher<Request> {
             return MatchResult.of(false);
         }
 
-        bodyResult = MatchResult.of(expectedBody.toString().equals(actual.toString()));
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            JsonNode expectedNode = mapper.readTree(expectedBody.toString());
+            JsonNode actualNode = mapper.readTree(actual.toString());
+            bodyResult = MatchResult.of(expectedNode.equals(actualNode));
+
+        } catch (JsonProcessingException ex) {
+            return MatchResult.of(false);
+        }
+
         if (! bodyResult.isExactMatch()) {
             logger.error("Body does not match expected: <" + expectedBody + "> actual: <" + actualBody + ">");
         }
