@@ -17,7 +17,7 @@
         <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
         <artifactoryResolveRepo>libs-release-local</artifactoryResolveRepo>
         <artifactorySnapshotRepo>libs-snapshot-local</artifactorySnapshotRepo>
-        <wiremock.standalone.version>2.32.0</wiremock.standalone.version>
+        <wiremock.standalone.version>2.35.1</wiremock.standalone.version>
     </properties>
 
     <dependencies>
