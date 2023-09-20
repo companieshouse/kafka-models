@@ -10,14 +10,14 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <avro.version>1.8.1</avro.version>
+        <java.version>17</java.version>
+        <avro.version>1.11.2</avro.version>
         <avro-maven-plugin.version>1.8.1</avro-maven-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
         <artifactoryResolveRepo>libs-release-local</artifactoryResolveRepo>
         <artifactorySnapshotRepo>libs-snapshot-local</artifactorySnapshotRepo>
-        <wiremock.standalone.version>2.32.0</wiremock.standalone.version>
+        <wiremock.standalone.version>2.35.1</wiremock.standalone.version>
     </properties>
 
     <dependencies>
@@ -29,31 +29,31 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.2.0</version>
+            <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-inline</artifactId>
-            <version>3.4.6</version>
+            <version>5.2.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
-            <version>2.21.0</version>
+            <version>5.5.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.9.0</version>
+            <version>3.24.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
-            <version>2.8.0</version>
+            <version>3.5.1</version>
         </dependency>
         <dependency>
             <groupId>com.github.tomakehurst</groupId>
@@ -86,7 +86,7 @@
         <dependency>
             <groupId>uk.gov.companieshouse</groupId>
             <artifactId>structured-logging</artifactId>
-            <version>1.9.12</version>
+            <version>1.9.25</version>
         </dependency>
     </dependencies>
 
