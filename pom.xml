@@ -11,8 +11,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
-        <avro.version>1.8.1</avro.version>
-        <avro-maven-plugin.version>1.8.1</avro-maven-plugin.version>
+        <avro.version>1.11.0</avro.version>
+        <avro-maven-plugin.version>1.11.0</avro-maven-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
         <artifactoryResolveRepo>libs-release-local</artifactoryResolveRepo>
