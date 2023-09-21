@@ -136,6 +136,21 @@
                             <goal>schema</goal>
                         </goals>
                         <configuration>
+                            <!--default is ${basedir}/src/main/avro
+                            The Avro source directory for schema, protocol and IDL files.-->
+                            <sourceDirectory>target/clean-schemas/chs-kafka-schemas/schemas</sourceDirectory>
+
+                            <!--default is ${project.build.directory}/generated-sources/avro
+                             The directory where Avro writes code-generated sources. IMPORTANT!! -->
+                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+
+                            <!--default is ${basedir}/src/test/avro
+                            The input directory containing any Avro files used in testing.-->
+                            <testSourceDirectory>${project.basedir}/src/test/avro/</testSourceDirectory>
+
+                            <!--default is ${project.build.directory}/generated-test-sources/avro
+                            The output directory where Avro writes code-generated files for your testing purposes.-->
+                            <testOutputDirectory>${project.basedir}/src/test/java/</testOutputDirectory>
                             <includes>
                                 <include>chd-item-ordered.avsc</include>
                                 <include>chips-rest-interfaces-send.avsc</include>
