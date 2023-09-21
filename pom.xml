@@ -130,32 +130,32 @@
                         <goals>
                             <goal>schema</goal>
                         </goals>
-                        <configuration>
-                            <stringType>String</stringType>
-                            <sourceDirectory>target/clean-schemas/chs-kafka-schemas/schemas</sourceDirectory>
-                            <includes>
-                                <include>chd-item-ordered.avsc</include>
-                                <include>chips-rest-interfaces-send.avsc</include>
-                                <include>chs-delta.avsc</include>
-                                <include>compliance-action-completed.avsc</include>
-                                <include>document-generation-started.avsc</include>
-                                <include>document-generation-completed.avsc</include>
-                                <include>document-generation-failed.avsc</include>
-                                <include>email-send.avsc</include>
-                                <include>filing-processed.avsc</include>
-                                <include>filing-received.avsc</include>
-                                <include>item-ordered-certified-copy.avsc</include>
-                                <include>order-received.avsc</include>
-                                <include>order-received-notification-retry.avsc</include>
-                                <include>render-submitted-data-document.avsc</include>
-                                <include>resource-changed-data.avsc</include>
-                                <include>secure-application-completed.avsc</include>
-                                <include>sign-digital-document.avsc</include>
-                            </includes>
-                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <stringType>String</stringType>
+                    <sourceDirectory>target/clean-schemas/chs-kafka-schemas/schemas</sourceDirectory>
+                    <includes>
+                        <include>chd-item-ordered.avsc</include>
+                        <include>chips-rest-interfaces-send.avsc</include>
+                        <include>chs-delta.avsc</include>
+                        <include>compliance-action-completed.avsc</include>
+                        <include>document-generation-started.avsc</include>
+                        <include>document-generation-completed.avsc</include>
+                        <include>document-generation-failed.avsc</include>
+                        <include>email-send.avsc</include>
+                        <include>filing-processed.avsc</include>
+                        <include>filing-received.avsc</include>
+                        <include>item-ordered-certified-copy.avsc</include>
+                        <include>order-received.avsc</include>
+                        <include>order-received-notification-retry.avsc</include>
+                        <include>render-submitted-data-document.avsc</include>
+                        <include>resource-changed-data.avsc</include>
+                        <include>secure-application-completed.avsc</include>
+                        <include>sign-digital-document.avsc</include>
+                    </includes>
+                    <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
