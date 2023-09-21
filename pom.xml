@@ -11,8 +11,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
-        <avro.version>1.11.0</avro.version>
-        <avro-maven-plugin.version>1.11.0</avro-maven-plugin.version>
+        <avro.version>1.11.2</avro.version>
+        <avro-maven-plugin.version>1.11.2</avro-maven-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>2.5</maven-resources-plugin.version>
         <artifactoryResolveRepo>libs-release-local</artifactoryResolveRepo>
@@ -124,11 +124,6 @@
                 <groupId>org.apache.avro</groupId>
                 <artifactId>avro-maven-plugin</artifactId>
                 <version>${avro-maven-plugin.version}</version>
-                <configuration>
-                    <stringType>String</stringType>
-                    <sourceDirectory>target/clean-schemas/chs-kafka-schemas/schemas</sourceDirectory>
-                    <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-                </configuration>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
@@ -136,21 +131,8 @@
                             <goal>schema</goal>
                         </goals>
                         <configuration>
-                            <!--default is ${basedir}/src/main/avro
-                            The Avro source directory for schema, protocol and IDL files.-->
+                            <stringType>String</stringType>
                             <sourceDirectory>target/clean-schemas/chs-kafka-schemas/schemas</sourceDirectory>
-
-                            <!--default is ${project.build.directory}/generated-sources/avro
-                             The directory where Avro writes code-generated sources. IMPORTANT!! -->
-                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
-
-                            <!--default is ${basedir}/src/test/avro
-                            The input directory containing any Avro files used in testing.-->
-                            <testSourceDirectory>${project.basedir}/src/test/avro/</testSourceDirectory>
-
-                            <!--default is ${project.build.directory}/generated-test-sources/avro
-                            The output directory where Avro writes code-generated files for your testing purposes.-->
-                            <testOutputDirectory>${project.basedir}/src/test/java/</testOutputDirectory>
                             <includes>
                                 <include>chd-item-ordered.avsc</include>
                                 <include>chips-rest-interfaces-send.avsc</include>
@@ -170,10 +152,10 @@
                                 <include>secure-application-completed.avsc</include>
                                 <include>sign-digital-document.avsc</include>
                             </includes>
+                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
-
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
