@@ -13,7 +13,7 @@ Requirements
 
 In order to run the service locally you will need the following:
 
-- [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- [Java](http://www.oracle.com/technetwork/java/javase/downloads)
 
 Building the models
 ------------
