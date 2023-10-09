@@ -3,10 +3,6 @@ package consumer.matcher;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.tomakehurst.wiremock.http.Request;
-import com.github.tomakehurst.wiremock.http.RequestMethod;
-import com.github.tomakehurst.wiremock.matching.MatchResult;
-import com.github.tomakehurst.wiremock.matching.ValueMatcher;
 import org.json.JSONException;
 import org.json.JSONObject;
 import uk.gov.companieshouse.logging.Logger;
@@ -14,7 +10,7 @@ import uk.gov.companieshouse.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RequestMatcher implements ValueMatcher<Request> {
+public class RequestMatcher {
 
     private final String expectedOutput;
     private final String expectedUrl;
@@ -25,7 +21,7 @@ public class RequestMatcher implements ValueMatcher<Request> {
         this.expectedOutput = output;
         this.logger = logger;
         this.expectedUrl = expectedUrl;
-        this.fieldsToIgnore = new ArrayList<>();;
+        this.fieldsToIgnore = new ArrayList<>();
     }
 
     public RequestMatcher(Logger logger, String output, String expectedUrl, List<String> fieldsToIgnore) {
@@ -35,51 +31,37 @@ public class RequestMatcher implements ValueMatcher<Request> {
         this.fieldsToIgnore = fieldsToIgnore;
     }
 
-    @Override
-    public MatchResult match(Request value) {
-        return MatchResult.aggregate(matchUrl(value.getUrl()), matchMethod(value.getMethod()),
-                matchBody(value.getBodyAsString()));
+    public boolean match(String actualUrl, String actualMethod, String actualBody) {
+        return matchUrl(actualUrl) && matchMethod(actualMethod) && matchBody(actualBody);
     }
 
-    private MatchResult matchUrl(String actualUrl) {
+    private boolean matchUrl(String actualUrl) {
+        boolean urlResult = expectedUrl.equals(actualUrl);
 
-        MatchResult urlResult = MatchResult.of(expectedUrl.equals(actualUrl));
-
-
-        if (! urlResult.isExactMatch()) {
-            logger.error("url does not match expected: <" + expectedUrl + "> actual: <" + actualUrl + ">");
+        if (!urlResult) {
+            logger.error("URL does not match expected: <" + expectedUrl + "> actual: <" + actualUrl + ">");
         }
 
         return urlResult;
     }
 
-    private MatchResult matchMethod(RequestMethod actualMethod) {
-        RequestMethod expectedMethod = RequestMethod.PUT;
+    private boolean matchMethod(String actualMethod) {
+        String expectedMethod = "PUT"; // Change as needed for your use case
 
-        MatchResult typeResult = MatchResult.of(expectedMethod.equals(actualMethod));
+        boolean typeResult = expectedMethod.equals(actualMethod);
 
-        if (! typeResult.isExactMatch()) {
+        if (!typeResult) {
             logger.error("Method does not match expected: <" + expectedMethod + "> actual: <" + actualMethod + ">");
         }
 
         return typeResult;
     }
 
-    private MatchResult matchBody(String actualBody) {
-
-        MatchResult bodyResult;
-        JSONObject expectedBody;
+    private boolean matchBody(String actualBody) {
         try {
-            expectedBody = new JSONObject(expectedOutput);
-        } catch (JSONException e) {
-            logger.error("Could not process expectedBody JSON: " + e);
-            return MatchResult.of(false);
-        }
-
-        JSONObject actual;
-        try {
-            actual = new JSONObject(actualBody);
-            fieldsToIgnore.forEach(fieldName ->{
+            JSONObject expectedBody = new JSONObject(expectedOutput);
+            JSONObject actual = new JSONObject(actualBody);
+            fieldsToIgnore.forEach(fieldName -> {
                 try {
                     removeField(actual, fieldName);
                 } catch (JSONException e) {
@@ -87,34 +69,28 @@ public class RequestMatcher implements ValueMatcher<Request> {
                 }
             });
 
-        } catch (JSONException e) {
-            logger.error("Could not process actualBody JSON: " + e);
-            return MatchResult.of(false);
-        }
-
-        ObjectMapper mapper = new ObjectMapper();
-        try {
+            ObjectMapper mapper = new ObjectMapper();
             JsonNode expectedNode = mapper.readTree(expectedBody.toString());
             JsonNode actualNode = mapper.readTree(actual.toString());
-            bodyResult = MatchResult.of(expectedNode.equals(actualNode));
 
-        } catch (JsonProcessingException ex) {
-            return MatchResult.of(false);
+            boolean bodyResult = expectedNode.equals(actualNode);
+
+            if (!bodyResult) {
+                logger.error("Body does not match expected: <" + expectedBody + "> actual: <" + actualBody + ">");
+            }
+
+            return bodyResult;
+        } catch (JSONException | JsonProcessingException ex) {
+            logger.error("Error processing JSON: " + ex);
+            return false;
         }
-
-        if (! bodyResult.isExactMatch()) {
-            logger.error("Body does not match expected: <" + expectedBody + "> actual: <" + actualBody + ">");
-        }
-
-        return bodyResult;
     }
 
-    public JSONObject removeField(JSONObject json , String fieldName) throws JSONException {
+    public JSONObject removeField(JSONObject json, String fieldName) throws JSONException {
         String key = fieldName.split("\\.")[0];
-        if (json.has(fieldName)){
+        if (json.has(fieldName)) {
             json.remove(key);
-        }
-        else if (json.has(key)) {
+        } else if (json.has(key)) {
             if (json.get(key) instanceof JSONObject) {
                 JSONObject value = json.getJSONObject(key);
                 removeField(value, fieldName.substring(fieldName.indexOf(".") + 1));
