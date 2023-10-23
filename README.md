@@ -3,6 +3,27 @@ kafka-models
 
 Library containing models for use with Avro which will be auto-generated from Kafka schemas.
 
+Things To consider
+--
+
++ Always make sure any code changes you make get copied across to legacy_master (compatible with Java 8) also to master (compatible with Java 17)
+
+###### Changes Specific to any version before Java 17
+
++ Please raise a PR to merge your changes only to [legacy_master](https://github.com/companieshouse/kafka-models/tree/legacy_master) branch
++ Use Non-Java 17 Major tags generated from pipeline in your references (example : tags below 2.0.0 for non java 17)
+
+###### Changes Specific to Java 17
+
+
++ Please merge your changes only to [master](https://github.com/companieshouse/kafka-models) branch
++ Use Java 17 Major tags generated from pipeline in your references (example : tags above 2.0.0 for java 17)
+
+###### Pipeline
+
+
++ Please use this [Pipeline](https://ci-platform.companieshouse.gov.uk/teams/team-development/pipelines/kafka-models) and make sure respective `source-code` or `source-code-legacy-master` task gets started once the PR is created or after the PR is merged to `master` or `legacy_master` and once the pipeline tasks are complete then use the created tags respectively.
+
 Cloning the repository
 ------------
 
