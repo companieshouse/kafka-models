@@ -3,6 +3,11 @@ kafka-models
 
 Library containing models for use with Avro which will be auto-generated from Kafka schemas.
 
+Things To consider
+--
+
++ Always make sure any code changes you make get copied across to `main-8` (compatible with Java 8) also to `main` (compatible with Java 17)
+
 Cloning the repository
 ------------
 
