@@ -145,6 +145,7 @@
                                 <include>filing-processed.avsc</include>
                                 <include>filing-received.avsc</include>
                                 <include>item-group-ordered.avsc</include>
+                                <include>item-group-processed.avsc</include>
                                 <include>item-group-processed-send.avsc</include>
                                 <include>item-ordered-certified-copy.avsc</include>
                                 <include>order-received.avsc</include>
