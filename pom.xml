@@ -235,6 +235,7 @@
                                 <include>item-ordered-certified-copy.avsc</include>
                                 <include>order-received.avsc</include>
                                 <include>order-received-notification-retry.avsc</include>
+                                <include>presenter-created.avsc</include>
                                 <include>render-submitted-data-document.avsc</include>
                                 <include>resource-changed-data.avsc</include>
                                 <include>secure-application-completed.avsc</include>
