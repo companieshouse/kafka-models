@@ -240,6 +240,8 @@
                                 <include>resource-changed-data.avsc</include>
                                 <include>secure-application-completed.avsc</include>
                                 <include>sign-digital-document.avsc</include>
+                                <include>chs-notification-email.avsc</include>
+                                <include>chs-notification-letter.avsc</include>
                             </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
