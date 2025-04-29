@@ -76,5 +76,6 @@ dependency-check:
 		printf -- "\n ERROR Cannot find suppressions file at '%s'\n" "$${suppressions_path}" >&2; \
 		exit 1; \
 	fi
+
 .PHONY: security-check
 security-check: dependency-check
