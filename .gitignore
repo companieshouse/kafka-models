@@ -8,3 +8,5 @@ target/
 # Ignore generated code in src direcotory
 src/main/java/email/
 src/main/java/uk/
+
+/suppress.xml
