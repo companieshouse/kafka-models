@@ -77,6 +77,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
             <version>${commons-compress.version}</version>
+            <!-- Excluded to mitigate CVE-2025-48924 until common-compress upgrades commons-lang3 -->
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.commons</groupId>
@@ -84,6 +85,8 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- Explicitly included CVE-2025-48924 fixed version of commons-lang3 to override the excluded transitive dependency -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
