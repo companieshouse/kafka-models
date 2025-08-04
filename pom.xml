@@ -274,6 +274,7 @@
                                 <include>item-group-processed.avsc</include>
                                 <include>item-group-processed-send.avsc</include>
                                 <include>item-ordered-certified-copy.avsc</include>
+                                <include>officer-merge.avsc</include>
                                 <include>order-received.avsc</include>
                                 <include>order-received-notification-retry.avsc</include>
                                 <include>presenter-created.avsc</include>
