@@ -37,14 +37,15 @@
         <jackson-core.version>2.15.2</jackson-core.version>
         <commons-fileupload.version>1.6.0</commons-fileupload.version>
         <guava.version>32.1.2-jre</guava.version>
-        <jetty-http.version>12.0.12</jetty-http.version>
+        <jetty-http.version>12.0.23</jetty-http.version>
+        <jetty-server.version>12.0.23</jetty-server.version>
         <json-smart.version>2.5.2</json-smart.version>
-        <jetty-xml.version>12.0.12</jetty-xml.version>
-        <jetty-client.version>12.0.19</jetty-client.version>
+        <jetty-xml.version>12.0.23</jetty-xml.version>
+        <jetty-client.version>12.0.23</jetty-client.version>
         <mockito-core.version>5.7.0</mockito-core.version>
         <byte-buddy.version>1.14.9</byte-buddy.version>
-        <jetty-ee10-webapp.version>12.0.12</jetty-ee10-webapp.version>
-        <wiremock-jetty12.version>3.11.0</wiremock-jetty12.version>
+        <jetty-ee10-webapp.version>12.0.23</jetty-ee10-webapp.version>
+        <wiremock-jetty12.version>3.13.1</wiremock-jetty12.version>
         <android-json.version>0.0.20131108.vaadin1</android-json.version>
         <structured-logging.version>3.0.36</structured-logging.version>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
@@ -168,6 +169,11 @@
             <artifactId>jetty-client</artifactId>
             <version>${jetty-client.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-server</artifactId>
+            <version>${jetty-server.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
@@ -274,6 +280,7 @@
                                 <include>item-group-processed.avsc</include>
                                 <include>item-group-processed-send.avsc</include>
                                 <include>item-ordered-certified-copy.avsc</include>
+                                <include>officer-merge.avsc</include>
                                 <include>order-received.avsc</include>
                                 <include>order-received-notification-retry.avsc</include>
                                 <include>presenter-created.avsc</include>
