@@ -290,6 +290,7 @@
                                 <include>sign-digital-document.avsc</include>
                                 <include>chs-notification-email.avsc</include>
                                 <include>chs-notification-letter.avsc</include>
+                                <include>authcode-cancellation.avsc</include>
                             </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
