@@ -266,6 +266,7 @@
                             <stringType>String</stringType>
                             <sourceDirectory>target/clean-schemas/chs-kafka-schemas/schemas</sourceDirectory>
                             <includes>
+                                <include>authcode-cancellation.avsc</include>
                                 <include>chd-item-ordered.avsc</include>
                                 <include>chips-rest-interfaces-send.avsc</include>
                                 <include>chs-delta.avsc</include>
