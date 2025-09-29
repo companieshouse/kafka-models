@@ -295,6 +295,7 @@
                                 <include>chs-notification-letter.avsc</include>
                                 <include>authcode-cancellation.avsc</include>
                                 <include>payment-processed.avsc</include>
+                                <include>refund-request.avsc</include>
                             </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
