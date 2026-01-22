@@ -46,6 +46,22 @@
         <structured-logging.version>3.0.41</structured-logging.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
+        <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
+        <!--sonar configuration-->
+        <sonar-maven-plugin.version>5.1.0.4751</sonar-maven-plugin.version>
+        <sonar.projectName>kafka-models</sonar.projectName>
+        <sonar.projectKey>uk.gov.companieshouse:kafka-models</sonar.projectKey>
+        <sonar.token>${CODE_ANALYSIS_TOKEN}</sonar.token>
+        <sonar.login></sonar.login>        
+        <sonar.password></sonar.password>
+        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+        <sonar.sources>src/main</sonar.sources>
+        <sonar.tests>src/test</sonar.tests>
+        <sonar.coverage.jacoco.xmlReportPaths>
+            ${project.build.directory}/site/jacoco/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.jacoco.reports>${project.build.directory}/site</sonar.jacoco.reports>
+        <sonar.java.binaries>${project.basedir}/target,${project.basedir}/target/*</sonar.java.binaries>
     </properties>
     <dependencies>
         <dependency>
@@ -304,6 +320,35 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <configuration>
+                    <append>true</append>
+                    <destFile>${sonar.jacoco.reports}/jacoco.exec</destFile>
+                    <dataFile>${sonar.jacoco.reports}/jacoco.exec</dataFile>
+                    <outputDirectory>${sonar.jacoco.reports}/jacoco</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>pre-unit-test</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                        <configuration>
+                            <propertyName>surefireArgLine</propertyName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>post-unit-test</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
