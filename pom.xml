@@ -302,6 +302,7 @@
                                 <include>payment-processed.avsc</include>
                                 <include>refund-request.avsc</include>
                                 <include>message-send.avsc</include>
+                                <include>tx-closed.avsc</include>
                             </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
