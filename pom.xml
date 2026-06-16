@@ -211,6 +211,7 @@
                                 <include>message-send.avsc</include>
                                 <include>tx-closed.avsc</include>
                                 <include>resource-changed.avsc</include>
+                                <include>strikeoff-partner-objections-incoming.avsc</include>
                             </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
