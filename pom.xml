@@ -196,6 +196,7 @@
                                 <include>monitor-notification-schema.avsc</include>
                                 <include>monitor-notifier-schema.avsc</include>
                                 <include>officer-merge.avsc</include>
+                                <include>psc-merge.avsc</include>
                                 <include>order-received.avsc</include>
                                 <include>order-received-notification-retry.avsc</include>
                                 <include>presenter-created.avsc</include>
