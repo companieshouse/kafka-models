@@ -213,6 +213,7 @@
                                 <include>tx-closed.avsc</include>
                                 <include>resource-changed.avsc</include>
                                 <include>strikeoff-partner-objections-incoming.avsc</include>
+                                <include>strikeoff-partner-objections-processed.avsc</include>
                             </includes>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
                         </configuration>
