@@ -13,26 +13,26 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class payment_processed extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 4997048472080056986L;
+public class PaymentProcessed extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = 7422172126748633413L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"payment_processed\",\"namespace\":\"payments\",\"fields\":[{\"name\":\"attempt\",\"type\":\"int\"},{\"name\":\"payment_resource_id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"refund_id\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentProcessed\",\"namespace\":\"payments\",\"fields\":[{\"name\":\"attempt\",\"type\":\"int\"},{\"name\":\"payment_resource_id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"refund_id\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<payment_processed> ENCODER =
+  private static final BinaryMessageEncoder<PaymentProcessed> ENCODER =
       new BinaryMessageEncoder<>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<payment_processed> DECODER =
+  private static final BinaryMessageDecoder<PaymentProcessed> DECODER =
       new BinaryMessageDecoder<>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<payment_processed> getEncoder() {
+  public static BinaryMessageEncoder<PaymentProcessed> getEncoder() {
     return ENCODER;
   }
 
@@ -40,7 +40,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<payment_processed> getDecoder() {
+  public static BinaryMessageDecoder<PaymentProcessed> getDecoder() {
     return DECODER;
   }
 
@@ -49,12 +49,12 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<payment_processed> createDecoder(SchemaStore resolver) {
+  public static BinaryMessageDecoder<PaymentProcessed> createDecoder(SchemaStore resolver) {
     return new BinaryMessageDecoder<>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this payment_processed to a ByteBuffer.
+   * Serializes this PaymentProcessed to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -63,12 +63,12 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
   }
 
   /**
-   * Deserializes a payment_processed from a ByteBuffer.
+   * Deserializes a PaymentProcessed from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a payment_processed instance decoded from the given buffer
+   * @return a PaymentProcessed instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static payment_processed fromByteBuffer(
+  public static PaymentProcessed fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -82,7 +82,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public payment_processed() {}
+  public PaymentProcessed() {}
 
   /**
    * All-args constructor.
@@ -90,7 +90,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
    * @param payment_resource_id The new value for payment_resource_id
    * @param refund_id The new value for refund_id
    */
-  public payment_processed(java.lang.Integer attempt, java.lang.String payment_resource_id, java.lang.String refund_id) {
+  public PaymentProcessed(java.lang.Integer attempt, java.lang.String payment_resource_id, java.lang.String refund_id) {
     this.attempt = attempt;
     this.payment_resource_id = payment_resource_id;
     this.refund_id = refund_id;
@@ -177,45 +177,45 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
   }
 
   /**
-   * Creates a new payment_processed RecordBuilder.
-   * @return A new payment_processed RecordBuilder
+   * Creates a new PaymentProcessed RecordBuilder.
+   * @return A new PaymentProcessed RecordBuilder
    */
-  public static payments.payment_processed.Builder newBuilder() {
-    return new payments.payment_processed.Builder();
+  public static payments.PaymentProcessed.Builder newBuilder() {
+    return new payments.PaymentProcessed.Builder();
   }
 
   /**
-   * Creates a new payment_processed RecordBuilder by copying an existing Builder.
+   * Creates a new PaymentProcessed RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new payment_processed RecordBuilder
+   * @return A new PaymentProcessed RecordBuilder
    */
-  public static payments.payment_processed.Builder newBuilder(payments.payment_processed.Builder other) {
+  public static payments.PaymentProcessed.Builder newBuilder(payments.PaymentProcessed.Builder other) {
     if (other == null) {
-      return new payments.payment_processed.Builder();
+      return new payments.PaymentProcessed.Builder();
     } else {
-      return new payments.payment_processed.Builder(other);
+      return new payments.PaymentProcessed.Builder(other);
     }
   }
 
   /**
-   * Creates a new payment_processed RecordBuilder by copying an existing payment_processed instance.
+   * Creates a new PaymentProcessed RecordBuilder by copying an existing PaymentProcessed instance.
    * @param other The existing instance to copy.
-   * @return A new payment_processed RecordBuilder
+   * @return A new PaymentProcessed RecordBuilder
    */
-  public static payments.payment_processed.Builder newBuilder(payments.payment_processed other) {
+  public static payments.PaymentProcessed.Builder newBuilder(payments.PaymentProcessed other) {
     if (other == null) {
-      return new payments.payment_processed.Builder();
+      return new payments.PaymentProcessed.Builder();
     } else {
-      return new payments.payment_processed.Builder(other);
+      return new payments.PaymentProcessed.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for payment_processed instances.
+   * RecordBuilder for PaymentProcessed instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<payment_processed>
-    implements org.apache.avro.data.RecordBuilder<payment_processed> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<PaymentProcessed>
+    implements org.apache.avro.data.RecordBuilder<PaymentProcessed> {
 
     private int attempt;
     private java.lang.String payment_resource_id;
@@ -230,7 +230,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(payments.payment_processed.Builder other) {
+    private Builder(payments.PaymentProcessed.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.attempt)) {
         this.attempt = data().deepCopy(fields()[0].schema(), other.attempt);
@@ -247,10 +247,10 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
     }
 
     /**
-     * Creates a Builder by copying an existing payment_processed instance
+     * Creates a Builder by copying an existing PaymentProcessed instance
      * @param other The existing instance to copy.
      */
-    private Builder(payments.payment_processed other) {
+    private Builder(payments.PaymentProcessed other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.attempt)) {
         this.attempt = data().deepCopy(fields()[0].schema(), other.attempt);
@@ -280,7 +280,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'attempt'.
       * @return This builder.
       */
-    public payments.payment_processed.Builder setAttempt(int value) {
+    public payments.PaymentProcessed.Builder setAttempt(int value) {
       validate(fields()[0], value);
       this.attempt = value;
       fieldSetFlags()[0] = true;
@@ -300,7 +300,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'attempt' field.
       * @return This builder.
       */
-    public payments.payment_processed.Builder clearAttempt() {
+    public payments.PaymentProcessed.Builder clearAttempt() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -319,7 +319,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'payment_resource_id'.
       * @return This builder.
       */
-    public payments.payment_processed.Builder setPaymentResourceId(java.lang.String value) {
+    public payments.PaymentProcessed.Builder setPaymentResourceId(java.lang.String value) {
       validate(fields()[1], value);
       this.payment_resource_id = value;
       fieldSetFlags()[1] = true;
@@ -339,7 +339,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'payment_resource_id' field.
       * @return This builder.
       */
-    public payments.payment_processed.Builder clearPaymentResourceId() {
+    public payments.PaymentProcessed.Builder clearPaymentResourceId() {
       payment_resource_id = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -359,7 +359,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
       * @param value The value of 'refund_id'.
       * @return This builder.
       */
-    public payments.payment_processed.Builder setRefundId(java.lang.String value) {
+    public payments.PaymentProcessed.Builder setRefundId(java.lang.String value) {
       validate(fields()[2], value);
       this.refund_id = value;
       fieldSetFlags()[2] = true;
@@ -379,7 +379,7 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
       * Clears the value of the 'refund_id' field.
       * @return This builder.
       */
-    public payments.payment_processed.Builder clearRefundId() {
+    public payments.PaymentProcessed.Builder clearRefundId() {
       refund_id = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -387,9 +387,9 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
 
     @Override
     @SuppressWarnings("unchecked")
-    public payment_processed build() {
+    public PaymentProcessed build() {
       try {
-        payment_processed record = new payment_processed();
+        PaymentProcessed record = new PaymentProcessed();
         record.attempt = fieldSetFlags()[0] ? this.attempt : (java.lang.Integer) defaultValue(fields()[0]);
         record.payment_resource_id = fieldSetFlags()[1] ? this.payment_resource_id : (java.lang.String) defaultValue(fields()[1]);
         record.refund_id = fieldSetFlags()[2] ? this.refund_id : (java.lang.String) defaultValue(fields()[2]);
@@ -403,8 +403,8 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<payment_processed>
-    WRITER$ = (org.apache.avro.io.DatumWriter<payment_processed>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<PaymentProcessed>
+    WRITER$ = (org.apache.avro.io.DatumWriter<PaymentProcessed>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -412,8 +412,8 @@ public class payment_processed extends org.apache.avro.specific.SpecificRecordBa
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<payment_processed>
-    READER$ = (org.apache.avro.io.DatumReader<payment_processed>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<PaymentProcessed>
+    READER$ = (org.apache.avro.io.DatumReader<PaymentProcessed>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
